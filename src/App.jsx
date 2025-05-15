@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navbar from "./components/shared/Navbar";
 import { createBrowserRouter } from "react-router-dom";
-import Login from "./components/auth/login";
+import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
 import Home from "./components/Home";
 import Jobs from "./components/Jobs";
@@ -51,27 +51,51 @@ const appRouter = createBrowserRouter([
   // admin paths
   {
     path: "/admin/companies",
-    element: <ProtectedRoute><Companies /></ProtectedRoute> 
+    element: (
+      <ProtectedRoute>
+        <Companies />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/admin/companies/create",
-    element: <ProtectedRoute><CompanayCreate /></ProtectedRoute>
+    element: (
+      <ProtectedRoute>
+        <CompanayCreate />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/admin/companies/:id",
-    element: <ProtectedRoute><CompanySetup /></ProtectedRoute>
-  },  
+    element: (
+      <ProtectedRoute>
+        <CompanySetup />
+      </ProtectedRoute>
+    ),
+  },
   {
     path: "/admin/jobs",
-    element: <ProtectedRoute><CompanyJob /></ProtectedRoute>
+    element: (
+      <ProtectedRoute>
+        <CompanyJob />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/admin/jobs/create",
-    element: <ProtectedRoute><Postjob /></ProtectedRoute>
+    element: (
+      <ProtectedRoute>
+        <Postjob />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/admin/jobs/:id/applicants",
-    element: <ProtectedRoute><Applicants /></ProtectedRoute>
+    element: (
+      <ProtectedRoute>
+        <Applicants />
+      </ProtectedRoute>
+    ),
   },
 ]);
 
